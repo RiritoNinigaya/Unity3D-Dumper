@@ -275,8 +275,6 @@ public:
 	static auto DumpToFile(const std::string& file) -> void {
 		std::ofstream io(file, std::fstream::out);
 
-		if (!io) return;
-
 		for (const auto& pAssembly : assembly) {
 			io << std::format("Assembly: {}\n", pAssembly->name.empty() ? "" : pAssembly->name);
 			io << std::format("AssemblyFile: {} \n", pAssembly->file.empty() ? "" : pAssembly->file);
